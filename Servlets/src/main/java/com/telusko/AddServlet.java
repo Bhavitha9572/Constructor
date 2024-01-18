@@ -16,21 +16,18 @@ public class AddServlet extends HttpServlet {
 	
     //service method ni comment chesam kadha khani httpservlet cls lo internal service method is there
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
   //public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		int i =Integer.parseInt(req.getParameter("num1"));
 		int j =Integer.parseInt(req.getParameter("num2"));
 		
 		int k= i+j;
-		//k=k*k;
 		
-		req.setAttribute("k", k);
-//		PrintWriter out =res.getWriter();
-//		out.println("result is  " +k);
+		res.sendRedirect("sq?k="+k);  //URL re-writing 
 		
-		RequestDispatcher rd =req.getRequestDispatcher("sq");
-		rd.forward(req, res);
-		 
+
+		
+		
 	}
 	
 	
