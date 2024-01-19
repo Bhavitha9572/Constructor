@@ -1,14 +1,15 @@
 package com.telusko;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@WebServlet("/add")
 public class AddServlet extends HttpServlet {
 	
 	//it will accept only get request if u keep dopost then it will acpt only post request 
