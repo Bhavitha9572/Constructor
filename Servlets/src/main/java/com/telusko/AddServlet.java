@@ -1,10 +1,9 @@
 package com.telusko;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,6 +22,11 @@ public class AddServlet extends HttpServlet {
 		
 		int k= i+j;
 		
+//		HttpSession session  = req.getSession();
+//		session.setAttribute("k", k);
+		
+		Cookie cookie =new Cookie("k",k+ "");  //
+		res.addCookie(cookie);  //
 		res.sendRedirect("sq?k="+k);  //URL re-writing 
 		
 
